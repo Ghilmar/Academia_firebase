@@ -119,7 +119,7 @@ export default function AdminLayout({ children }) {
                   AE
                 </div>
                 <div>
-                  <div className="text-lg font-semibold">Academia Pro</div>
+                  <div className="text-lg font-semibold">Academia ProOO</div>
                   <div className="text-xs text-gray-500 -mt-0.5">Admin</div>
                 </div>
               </div>

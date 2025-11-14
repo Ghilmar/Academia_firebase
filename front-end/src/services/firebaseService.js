@@ -95,3 +95,39 @@ export async function deleteUserFirebase(id) {
   await deleteDoc(docRef);
   return true;
 }
+
+/* ---------------------- COURSES ---------------------- */
+export async function getCoursesFirebase() {
+  initFirebase();
+  const snapshot = await getDocs(collection(db, "courses"));
+  return snapshot.docs.map(d => ({ id: d.id, ...d.data() }));
+}
+
+export async function getCourseFirebase(id) {
+  initFirebase();
+  const docRef = doc(db, "courses", String(id));
+  const snap = await getDoc(docRef);
+  if (!snap.exists()) throw new Error("Curso no encontrado");
+  return { id: snap.id, ...snap.data() };
+}
+
+export async function createCourseFirebase(data) {
+  initFirebase();
+  const col = collection(db, "courses");
+  const ref = await addDoc(col, data);
+  return { id: ref.id, ...data };
+}
+
+export async function updateCourseFirebase(id, data) {
+  initFirebase();
+  const docRef = doc(db, "courses", String(id));
+  await updateDoc(docRef, data);
+  return { id, ...data };
+}
+
+export async function deleteCourseFirebase(id) {
+  initFirebase();
+  const docRef = doc(db, "courses", String(id));
+  await deleteDoc(docRef);
+  return true;
+}

@@ -12,7 +12,14 @@ import {
   getUserFirebase, 
   createUserFirebase, 
   updateUserFirebase, 
-  deleteUserFirebase 
+  deleteUserFirebase,
+  
+  getCoursesFirebase,
+  getCourseFirebase,
+  createCourseFirebase,
+  updateCourseFirebase,
+  deleteCourseFirebase
+  
 } from '../services/firebaseService';
 
 /* ---------------------- MENTORS ---------------------- */
@@ -58,25 +65,24 @@ export async function deleteUser(id) {
 }
 
 /* ---------------------- COURSES ---------------------- */
-// TODO: Implementar en firebaseService.js
 export async function getCourses(query = "") {
-  throw new Error("Courses not implemented yet in Firebase");
+  return await getCoursesFirebase();
 }
 
 export async function getCourse(id) {
-  throw new Error("Courses not implemented yet in Firebase");
+  return await getCourseFirebase(id);
 }
 
 export async function createCourse(data) {
-  throw new Error("Courses not implemented yet in Firebase");
+  return await createCourseFirebase(data);
 }
 
 export async function updateCourse(id, data) {
-  throw new Error("Courses not implemented yet in Firebase");
+  return await updateCourseFirebase(id, data);
 }
 
 export async function deleteCourse(id) {
-  throw new Error("Courses not implemented yet in Firebase");
+  return await deleteCourseFirebase(id);
 }
 
 /* ---------------------- BOOKINGS ---------------------- */

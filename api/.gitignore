@@ -1,0 +1,23 @@
+# Dependencias
+node_modules/
+
+# Archivos de construcción
+dist/
+build/
+config/
+
+database/skillup.db
+
+# Archivos multimedia
+public/uploads/
+uploads/
+
+# Archivos de configuración local
+.env
+.env.local
+
+# Archivos de logs
+*.log
+
+# Archivos de sistema operativo
+.DS_Store
